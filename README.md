@@ -25,7 +25,7 @@ A link to the live, hosted version of the app: []()
 
 ### Tasks in the project
 
-- Create project with Angular CLI, by using `ng new angular --no-standalone` terminal command
+- Create project with Angular CLI, by using `ng new project-name --no-standalone` terminal command
 - Set up Angular HttpClient
 - Create Angular Service for Consuming REST API using Angular HttpClient
 

@@ -28,9 +28,12 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 
+//import created components
+import { NavigationComponent } from './navigation/navigation.component';
+
 //add HttpClientModule in the @NgModule imports
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NavigationComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

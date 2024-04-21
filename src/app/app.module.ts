@@ -30,10 +30,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 //import created components
 import { NavigationComponent } from './navigation/navigation.component';
+import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 
 //add HttpClientModule in the @NgModule imports
 @NgModule({
-  declarations: [AppComponent, NavigationComponent],
+  declarations: [AppComponent, NavigationComponent, UserRegistrationFormComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

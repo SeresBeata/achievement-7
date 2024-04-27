@@ -2,7 +2,7 @@
 <!-- src/app/user-registration-form/user-registration-form.component.html -->
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Login</mat-card-title>
+    <mat-card-title style="color: white">Login</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <form>
@@ -29,7 +29,12 @@
     </form>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button (click)="LoginUser()" color="primary">
+    <button
+      mat-raised-button
+      (click)="LoginUser()"
+      color="accent"
+      style="color: black"
+    >
       Login
     </button>
   </mat-card-actions>

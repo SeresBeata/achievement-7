@@ -8,11 +8,12 @@
 .backimg {
   background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)),
     url("https://assets.nflxext.com/ffe/siteui/vlv3/a09bb938-2d90-42ae-986e-5a3e4abf9e77/eb2f9d27-ad97-4e4e-8db5-f2064e576f70/DE-de-20231113-popsignuptwoweeks-perspective_alpha_website_small.jpg");
-  background-repeat: repeat;
-  background-size: contain;
-  width: 100%;
-  width: 100vw;
-  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  background-position: center;
+  background-size: cover;
+  position: relative;
 }
 
 .main-page--btns {

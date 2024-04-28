@@ -36,13 +36,12 @@ export class UserLoginFormComponent implements OnInit {
           this.dialogRef.close(); // This will close the modal on success!
           //test logging users info
           console.log(result);
+          //use local storage
+          localStorage.setItem('user', result.user.username);
+          localStorage.setItem('token', result.token);
           this.snackBar.open('Hello ' + result.user.username + '!', 'OK', {
             duration: 2000,
           });
-
-          //TEST, STILL NEEDS CONFIRMATION THAT OT WORKS
-          localStorage.setItem('user', JSON.stringify(result.user));
-          localStorage.setItem('token', JSON.stringify(result.token));
         },
         (result) => {
           this.snackBar.open(result, 'OK', {

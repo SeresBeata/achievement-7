@@ -1,0 +1,29 @@
+.movie-card--container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+  background-color: #330014;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.movie-card--card {
+  height: 630px;
+  width: 300px;
+}
+
+.movie-card--title {
+  color: #ff0066;
+}
+
+.movie-card--subtitle {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.movie-card--btns-container {
+  display: flex;
+  justify-content: space-around;
+}

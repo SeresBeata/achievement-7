@@ -1,24 +1,15 @@
-<div
-  style="
-    display: flex;
-    gap: 20px;
-    width: 100%;
-    flex-wrap: wrap;
-    background-color: #330014;
-    justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  "
->
-  <mat-card *ngFor="let movie of movies" style="height: 630px; width: 300px">
+<div class="movie-card--container">
+  <mat-card *ngFor="let movie of movies" class="movie-card--card">
     <mat-card-header>
-      <mat-card-title style="color: #ff0066">{{ movie.title }}</mat-card-title>
-      <mat-card-subtitle style="margin-top: 5px; margin-bottom: 5px"
+      <mat-card-title class="movie-card--title">{{
+        movie.title
+      }}</mat-card-title>
+      <mat-card-subtitle class="movie-card--subtitle"
         >Directed by: {{ movie.director.directorName }}</mat-card-subtitle
       >
     </mat-card-header>
     <img src="{{ movie.imagePath }}" alt="{{ movie.title }}" />
-    <mat-card-actions style="display: flex; justify-content: space-around">
+    <mat-card-actions class="movie-card--btns-container">
       <div>
         <button mat-button color="accent" style="color: #d9d9d9">Genre</button>
         <button mat-button color="accent" style="color: #d9d9d9">

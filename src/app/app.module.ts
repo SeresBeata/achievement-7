@@ -5,6 +5,8 @@ import {
 } from '@angular/platform-browser';
 //import HttpClientModule, a simplified API for Angular applications that makes it possible for the client app to communicate with the API or server-side.
 import { HttpClientModule } from '@angular/common/http';
+//import RouterModule and Routes to define routes
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +30,13 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 
+//declare routes
+const appRoutes: Routes = [
+  { path: 'welcome', component: WelcomePageComponent },
+  { path: 'movies', component: MovieCardComponent },
+  { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
+];
+
 //import created components
 import { NavigationComponent } from './navigation/navigation.component';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
@@ -37,7 +46,14 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 //add HttpClientModule in the @NgModule imports
 @NgModule({
-  declarations: [AppComponent, NavigationComponent, UserRegistrationFormComponent, UserLoginFormComponent, MovieCardComponent, WelcomePageComponent],
+  declarations: [
+    AppComponent,
+    NavigationComponent,
+    UserRegistrationFormComponent,
+    UserLoginFormComponent,
+    MovieCardComponent,
+    WelcomePageComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -57,6 +73,7 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
     MatFormFieldModule,
     FormsModule,
     MatDialogModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [
     provideClientHydration(),

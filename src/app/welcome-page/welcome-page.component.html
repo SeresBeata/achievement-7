@@ -1,1 +1,25 @@
-<p>welcome-page works!</p>
+<!-- <p>welcome-page works!</p> -->
+<div class="main-page--container backimg">
+  <div class="main-page">
+    <h1 style="color: white">Welcome to myFlix!</h1>
+    <div class="main-page--btns">
+      <button
+        mat-raised-button
+        (click)="openUserRegistrationDialog()"
+        style="margin-right: 10px"
+        color="accent"
+        style="color: black"
+      >
+        Sign Up
+      </button>
+      <button
+        mat-raised-button
+        (click)="openUserLoginDialog()"
+        color="accent"
+        style="color: black"
+      >
+        Login
+      </button>
+    </div>
+  </div>
+</div>

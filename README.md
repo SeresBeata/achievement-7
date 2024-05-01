@@ -16,18 +16,20 @@ The aim of this project was to build the client-side component of a “myFlix”
 
 ### Screenshots to represent the project
 
-![screenshot of the project]()
-![screenshot of the project]()
+![screenshot of the project](./img/img_1.png)
+![screenshot of the project](./img/img_2.png)
 
 ### Link to the App
 
-A link to the live, hosted version of the app: []()
+A link to the live, hosted version of the app: [https://seresbeata.github.io/achievement-7/welcome](https://seresbeata.github.io/achievement-7/welcome)
 
 ### Tasks in the project
 
 - Create project with Angular CLI, by using `ng new project-name --no-standalone` terminal command
 - Set up Angular HttpClient
 - Create Angular Service for Consuming REST API using Angular HttpClient
+- Use pre-built and customizable UI components of Angular Material
+- Use RouterModule for routing
 
 ### Angular CLI
 
@@ -42,5 +44,11 @@ Run `ng serve --open` for a dev server. Navigate to `http://localhost:4200/`. Th
 1.  Reference  
     Description: Angular is a TypeScript-based, free and open-source single-page web application framework.  
     Product: Angular  
-    Date: 15/04/2023  
+    Date: 15/04/2024  
     [https://angular.io/](https://angular.io/)
+
+2.  Reference  
+    Description: Angular Material is a UI component library for Angular applications that follows Google's Material Design guidelines.  
+    Product: Angular Material  
+    Date: 01/05/2024  
+    [https://material.angular.io/](https://material.angular.io/)

@@ -45,6 +45,7 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 //add HttpClientModule in the @NgModule imports
 @NgModule({
@@ -57,6 +58,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
     WelcomePageComponent,
     NavbarComponent,
     MovieDetailsComponent,
+    ProfilePageComponent,
   ],
   imports: [
     BrowserModule,

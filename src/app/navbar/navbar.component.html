@@ -1,1 +1,13 @@
-<p>navbar works!</p>
+<div mat-toolbar class="navbar-container">
+  <div mat-toolbar-row>
+    <!-- add logout function on click -->
+    <button
+      mat-icon-button
+      aria-label="logout"
+      (click)="logoutUser()"
+      style="margin-right: 10px"
+    >
+      <mat-icon color="accent">exit_to_app</mat-icon>
+    </button>
+  </div>
+</div>

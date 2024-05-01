@@ -43,6 +43,7 @@ import { UserRegistrationFormComponent } from './user-registration-form/user-reg
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 //add HttpClientModule in the @NgModule imports
 @NgModule({
@@ -53,6 +54,7 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
     UserLoginFormComponent,
     MovieCardComponent,
     WelcomePageComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

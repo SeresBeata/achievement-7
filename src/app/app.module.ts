@@ -34,6 +34,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
+  { path: 'profile', component: ProfilePageComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
 

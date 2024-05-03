@@ -108,15 +108,25 @@ export class FetchApiDataService {
   }
 
   //make the api call for endpoint to update user's data
-  updateUser(id: string): Observable<any> {
+  updateUser(updatedUser: any): Observable<any> {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
     const token = localStorage.getItem('token');
     return this.http
-      .put<Response>(apiUrl + 'users/' + id, {
+      .put<Response>(apiUrl + 'users/' + user._id, updatedUser, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),
       })
-      .pipe(map(this.extractResponseData), catchError(this.handleError));
+      .pipe(
+        map(this.extractResponseData),
+        catchError((err) => {
+          console.log('Error: ' + err.error);
+          console.log(err);
+          alert(err.error);
+          // return err;
+          return '';
+        })
+      );
   }
 
   //make the api call for endpoint to delete user

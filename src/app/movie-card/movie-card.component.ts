@@ -8,6 +8,7 @@ import {
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
 import { MovieDetailsComponent } from '../movie-details/movie-details.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-movie-card',
@@ -18,7 +19,8 @@ export class MovieCardComponent {
   movies: any[] = [];
   constructor(
     public fetchApiData: FetchApiDataService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -60,5 +62,27 @@ export class MovieCardComponent {
         content: movie.description,
       },
     });
+  }
+
+  isFavorite(favMovieId: string): boolean {
+    return this.fetchApiData.isFavoriteMovie(favMovieId);
+  }
+
+  addFavMovie(favMovieId: string): void {
+    this.fetchApiData.addFavMovie(favMovieId).subscribe(() => {
+      console.log('addfavmovies called');
+
+      this.snackBar.open('Added to favorites', 'OK', { duration: 2000 });
+      console.log('addfavmovies called');
+    });
+  }
+
+  removeFavMovie(favMovieId: string): void {
+    this.fetchApiData.delFavMovie(favMovieId).subscribe(() => {
+      this.snackBar.open('Removed movie from favorites', 'OK', {
+        duration: 2000,
+      });
+    });
+    console.log('removed fav movie');
   }
 }

@@ -1,1 +1,52 @@
-<p>profile-page works!</p>
+<app-navbar></app-navbar>
+<div class="profile-container backimg">
+  <div mat-card>
+    <div mat-card-content>
+      <div mat-form-field>
+        <div mat-form-field class="form-item" style="padding-bottom: 15px">
+          <input
+            [(ngModel)]="userData.username"
+            matInput
+            placeholder="new username"
+            type="text"
+            name="username"
+            required
+            class="profile-input"
+          />
+        </div>
+        <div mat-form-field class="form-item" style="padding-bottom: 15px">
+          <input
+            [(ngModel)]="userData.password"
+            matInput
+            placeholder="new password"
+            type="password"
+            name="password"
+            required
+            class="profile-input"
+          />
+        </div>
+        <div mat-form-field class="form-item" style="padding-bottom: 15px">
+          <input
+            [(ngModel)]="userData.email"
+            matInput
+            placeholder="new email"
+            type="email"
+            name="email"
+            required
+            class="profile-input"
+          />
+        </div>
+      </div>
+      <div style="display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          color="accent"
+          style="color: black"
+          (click)="editUser()"
+        >
+          SUBMIT
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

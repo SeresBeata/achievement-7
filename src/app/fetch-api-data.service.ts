@@ -96,15 +96,24 @@ export class FetchApiDataService {
   }
 
   //make the api call for endpoint to add favMovie
-  addFavMovie(id: string, movieId: string): Observable<any> {
+  addFavMovie(movieId: string): Observable<any> {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
     const token = localStorage.getItem('token');
+    user.favouriteMovies.push(movieId);
+    localStorage.setItem('user', JSON.stringify(user));
+
     return this.http
-      .post<Response>(apiUrl + 'users/' + id + '/' + movieId, {
-        headers: new HttpHeaders({
-          Authorization: 'Bearer ' + token,
-        }),
-      })
-      .pipe(map(this.extractResponseData), catchError(this.handleError));
+      .post(
+        apiUrl + `users/${user._id}/${movieId}`,
+        {},
+        {
+          headers: new HttpHeaders({
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + token,
+          }),
+        }
+      )
+      .pipe(catchError(this.handleError));
   }
 
   //make the api call for endpoint to update user's data
@@ -141,16 +150,23 @@ export class FetchApiDataService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  //make the api call for endpoint to delete favMovie
-  delFavMovie(id: string, movieId: string): Observable<any> {
+  //make the api call for endpoint to remove favMovie
+  delFavMovie(movieId: string): Observable<any> {
     const token = localStorage.getItem('token');
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    const index = user.favouriteMovies.indexOf(movieId);
+    if (index >= 0) {
+      user.favouriteMovies.splice(index, 1);
+    }
+    localStorage.setItem('user', JSON.stringify(user));
+
     return this.http
-      .delete<Response>(apiUrl + 'users/' + id + '/' + movieId, {
+      .delete(apiUrl + `users/${user._id}/${movieId}`, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),
       })
-      .pipe(map(this.extractResponseData), catchError(this.handleError));
+      .pipe(catchError(this.handleError));
   }
 
   //make the api call to get movies by genre
@@ -175,6 +191,15 @@ export class FetchApiDataService {
         }),
       })
       .pipe(map(this.extractResponseData), catchError(this.handleError));
+  }
+
+  public isFavoriteMovie(movieId: string): boolean {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    if (user) {
+      return user.favouriteMovies.includes(movieId);
+    } else {
+      return false;
+    }
   }
 
   // Non-typed response extraction

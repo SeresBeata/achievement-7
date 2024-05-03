@@ -37,7 +37,20 @@
           Synopsis
         </button>
       </div>
-      <mat-icon color="accent">favorite_border</mat-icon>
+      <button
+        (click)="addFavMovie(movie._id)"
+        *ngIf="!isFavorite(movie._id)"
+        style="background: none; border: none"
+      >
+        <mat-icon color="accent">favorite_border</mat-icon>
+      </button>
+      <button
+        (click)="removeFavMovie(movie._id)"
+        *ngIf="isFavorite(movie._id)"
+        style="background: none; border: none"
+      >
+        <mat-icon color="accent">favorite</mat-icon>
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>

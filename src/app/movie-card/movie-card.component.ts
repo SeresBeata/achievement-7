@@ -27,6 +27,10 @@ export class MovieCardComponent {
     this.getMovies();
   }
 
+  /**
+   * calls the getAllMovies API and returns the movies from the database
+   */
+
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -68,6 +72,11 @@ export class MovieCardComponent {
     return this.fetchApiData.isFavoriteMovie(favMovieId);
   }
 
+  /**
+   * calls the addFavMoie API adds movie to users favorites
+   * @param {string} favMovieId of the movie selected
+   */
+
   addFavMovie(favMovieId: string): void {
     this.fetchApiData.addFavMovie(favMovieId).subscribe(() => {
       console.log('addfavmovies called');
@@ -76,6 +85,11 @@ export class MovieCardComponent {
       console.log('addfavmovies called');
     });
   }
+
+  /**
+   * calls the delFavMovie API and removes a movie from users favorites
+   * @param {string} favMovieId of the movie selected
+   */
 
   removeFavMovie(favMovieId: string): void {
     this.fetchApiData.delFavMovie(favMovieId).subscribe(() => {

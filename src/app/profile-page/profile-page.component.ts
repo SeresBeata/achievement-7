@@ -46,6 +46,11 @@ export class ProfilePageComponent {
     return JSON.parse(localStorage.getItem('user') || '{}');
   }
 
+  /**
+   * calls the updateUser API and updates the users information in the database
+   * @function editUser
+   */
+
   editUser(): void {
     this.fetchApiData.updateUser(this.userData).subscribe((result) => {
       localStorage.setItem('user', JSON.stringify(result));

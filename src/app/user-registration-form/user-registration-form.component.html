@@ -13,7 +13,10 @@
           type="text"
           name="username"
           required
+          minlength="5"
+          maxlength="10"
         />
+        <mat-error>Name: <strong>min 5 characters</strong></mat-error>
       </mat-form-field>
       <mat-form-field>
         <input
@@ -23,7 +26,10 @@
           placeholder="Password"
           name="password"
           required
+          minlength="5"
+          maxlength="10"
         />
+        <mat-error>Password: <strong>min 5 and max 10</strong></mat-error>
       </mat-form-field>
       <mat-form-field>
         <input
@@ -34,6 +40,7 @@
           name="email"
           required
         />
+        <mat-error>Email is <strong>required</strong></mat-error>
       </mat-form-field>
       <mat-form-field>
         <input
@@ -42,7 +49,9 @@
           type="date"
           placeholder="Birthday"
           name="birthday"
+          required
         />
+        <mat-error>Birthday is <strong>required</strong></mat-error>
       </mat-form-field>
     </form>
   </mat-card-content>

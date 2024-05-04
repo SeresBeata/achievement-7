@@ -131,7 +131,15 @@ export class FetchApiDataService {
         catchError((err) => {
           console.log('Error: ' + err.error);
           console.log(err);
-          alert(err.error);
+          if (
+            err.error ===
+            `Sorry the username ${user.username} is already taken.`
+          ) {
+            alert(err.error);
+          } else {
+            alert(err.error.errors[0].msg);
+          }
+
           // return err;
           return '';
         })
